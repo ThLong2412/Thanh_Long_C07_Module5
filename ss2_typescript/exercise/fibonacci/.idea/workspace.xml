@@ -25,14 +25,6 @@
       <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../practice/practice_1/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../practice/practice_1/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../practice/practice_1/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../practice/practice_2/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../practice/practice_2/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../practice/practice_2/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../case_study_module5/facility/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../case_study_module5/facility/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../case_study_module5/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../case_study_module5/layout.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +53,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../.." />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -83,7 +76,7 @@
       <workItem from="1671610171107" duration="5473000" />
       <workItem from="1671680060956" duration="1192000" />
       <workItem from="1671681283777" duration="2000" />
-      <workItem from="1671681292775" duration="509000" />
+      <workItem from="1671681292775" duration="791000" />
     </task>
     <servers />
   </component>
@@ -106,5 +99,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1671682089787">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1671682089787" />
   </component>
 </project>
