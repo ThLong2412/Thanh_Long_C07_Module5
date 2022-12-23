@@ -1,0 +1,20 @@
+
+  <label>
+    value: {{calculator.number1}}
+    <input type="number" (change)="changNumber1($event.target)" [value]="calculator.number1">
+  </label>
+  <label>
+    value: {{calculator.number2}}
+    <input type="number" (change)="changNumber2($event.target)"  [value]="calculator.number2">
+  </label>
+
+  <br>
+  <br>
+  <input type="button"  value="+" (click)="changeAdd()" >
+  <input type="button"  value="-" (click)="changeSub()">
+  <input type="button"  value="*" (click)="changeMul()">
+  <input type="button"  value="/" (click)="changeDiv()">
+
+ <h3>
+   Result: {{calculator.result}}
+ </h3>
