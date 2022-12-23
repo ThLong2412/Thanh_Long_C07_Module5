@@ -18,5 +18,4 @@ export class ColorComponent implements OnInit {
   changeColor(target: any) {
   this.color = target.value;
   }
-
 }

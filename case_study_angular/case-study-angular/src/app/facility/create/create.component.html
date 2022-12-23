@@ -1,0 +1,98 @@
+<app-header></app-header>
+<app-create>
+  <form  style="width: 500px; margin-left: 500px">
+    <div>
+      <label for="facilityType">Loại dịch vụ:</label>
+      <div>
+        <select id="facilityType" class="form-select"
+                onchange="changeForm(this)">
+          <option class="text-danger">Chọn loại dịch vụ..</option>
+        </select>
+      </div>
+    </div>
+    <div id="nameForm" style="display: block">
+      <label for="name">Tên dịch vụ:</label>
+      <input type="text" id="name"
+             class="form-control" placeholder="Nhập tên dịch vụ.."/>
+    </div>
+    <div id="areaForm" style="display: block">
+      <label for="area">Diện tích sử dụng (m<sup>2</sup>):</label>
+      <div>
+        <input type="number" id="area" class="form-control" placeholder="Nhập diện tích sử dụng.."
+               required pattern="^[1-9]\d*$"
+               title="Diện tích sử dụng phải là số nguyên dương."/>
+      </div>
+    </div>
+    <div id="costForm" style="display: block">
+      <label for="cost">Chi phí thuê (VNĐ):</label>
+      <div>
+        <input type="number" id="cost" class="form-control" placeholder="Nhập chi phí thuê.."
+               required pattern="^[1-9]\d*$"
+               title="Chi phí thê phải là số nguyên dương."/>
+      </div>
+    </div>
+    <div id="maxPeopleForm" style="display: block">
+      <label for="maxPeople">Số người tối đa:</label>
+      <div>
+        <input type="number" id="maxPeople" class="form-control" placeholder="Nhập số người tối đa.."
+               required pattern="^[1-9]\d*$"
+               title="Số người tối đa phải là số nguyên dương."/>
+      </div>
+    </div>
+    <div id="standardRoomForm" style="display: block">
+      <label for="standardRoom">Tiêu chuẩn phòng:</label>
+      <div>
+        <input type="text" id="standardRoom" class="form-control" placeholder="Nhập tiêu chuẩn phòng.."
+        />
+      </div>
+    </div>
+    <div id="descriptionForm" style="display: block">
+      <label for="description">Mô tả tiện nghi khác:</label>
+      <div>
+        <input type="text" id="description" class="form-control" placeholder="Nhập mô tả tiện nghi khác.."
+        />
+      </div>
+    </div>
+
+    <div id="poolAreaForm" style="display: block">
+      <label for="poolArea">Diện tích hồ bơi (m<sup>2</sup>):</label>
+      <div>
+        <input type="number" id="poolArea" class="form-control" placeholder="Nhập diện tích hồ bơi.."
+               pattern="^[1-9]\d*| *$"
+               title="Diện tích hồ bơi phải là số nguyên dương."/>
+      </div>
+    </div>
+
+    <div id="numberOfFloorsForm" style="display: block">
+      <label for="numberOfFloors">Số tầng:</label>
+      <div>
+        <input type="number" id="numberOfFloors" class="form-control" placeholder="Nhập số tầng.."
+               pattern="^[1-9]\d*| *$"
+               title="Số tầng phải là số nguyên dương."/>
+      </div>
+    </div>
+
+    <div id="facilityFreeForm" style="display: block">
+      <label for="facilityFree">Dịch vụ miễn phí đi kèm:</label>
+      <div>
+        <input type="text" id="facilityFree" class="form-control"
+               placeholder="Nhập dịch vụ miễn phí đi kèm.."/>
+      </div>
+    </div>
+    <div id="rentTypeForm" style="display: block">
+      <label for="rentType">Kiểu thuê:</label>
+      <div>
+        <select id="rentType" class="form-select">
+          <option selected>Choose...</option>
+          <option>...</option>
+        </select>
+      </div>
+    </div>
+    <div style="margin-top: 30px; margin-bottom: 30px" class="text-center">
+      <button class="btn btn-outline-primary">
+        Save
+      </button>
+    </div>
+  </form>
+</app-create>
+<app-footer></app-footer>
