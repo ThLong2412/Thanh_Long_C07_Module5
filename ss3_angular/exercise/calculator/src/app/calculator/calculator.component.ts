@@ -19,7 +19,7 @@ export class CalculatorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  changNumber1(target: any) {
+  changeNumber1(target: any) {
     this.calculator.number1 = target.value;
   }
 

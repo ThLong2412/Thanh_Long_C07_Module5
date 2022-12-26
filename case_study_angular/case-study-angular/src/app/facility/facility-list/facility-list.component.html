@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-sm-4" *ngFor="let item of facilityList; index as i">
+    <div style="display: flex; justify-content: center; text-align: center; margin-top: 20px; margin-bottom: 20px">
+      <div class="card" style="width: 18rem">
+        <div class="card-body" style="background-color: aquamarine">
+          <h5 class="card-title">Facility</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item list-group-item-action list-group-item-primary">{{i + 1}}</li>
+          <li class="list-group-item list-group-item-action list-group-item-secondary">Name: {{item.name}}</li>
+          <li class="list-group-item list-group-item-action list-group-item-success">Facility type: {{item.facilityType?.name}}</li>
+          <li class="list-group-item list-group-item-action list-group-item-info">Area: {{item.area}}</li>
+          <li class="list-group-item list-group-item-action list-group-item-danger">Max people: {{item.maxPeople}}</li>
+          <li class="list-group-item list-group-item-action list-group-item-warning">Standard: {{item.standardRoom}}</li>
+          <li class="list-group-item list-group-item-action list-group-item-dark">Rent type: {{item.rentType?.name}}</li>
+        </ul>
+        <div class="card-body">
+          <button class="btn btn-outline-warning"><a href="#" class="card-link">Update</a></button>
+          <button class="btn btn-outline-danger"><a href="#" class="card-link">Delete</a></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,33 @@
+<table class="table">
+  <thead>
+  <tr class="table-dark">
+    <th>STT</th>
+    <th>Name Facility</th>
+    <th>Customer</th>
+    <th>Date Start</th>
+    <th>Date End</th>
+    <th>Deposit</th>
+    <th colspan="2">Attach Facility</th>
+  </tr>
+  </thead>
+  <tbody class="table-hover">
+  <tr *ngFor="let item of contracts; index as i">
+    <td>{{i+1}}</td>
+    <td>{{item.facility?.name}}</td>
+    <td>{{item.customer?.name}}</td>
+    <td>{{item.startDate}}</td>
+    <td>{{item.endDate}}</td>
+    <td>{{item.deposit}}</td>
+    <td>
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="button" >
+        <span style="color: black">+</span>
+      </button>
+    </td>
+    <td>
+      <button class="btn btn-outline-primary my-2 my-sm-0 ">
+        <span class="text-light m-auto" style="color: black">Attach Facility List</span>
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>

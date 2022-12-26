@@ -1,0 +1,59 @@
+
+<form>
+  <div class="col-lg-6">
+    <div class="mb-4">
+      <label for="name">Tên dịch vụ:</label>
+      <div>
+        <select id="name" >
+          <option value="${''}"></option>
+        </select>
+      </div>
+    </div>
+    <div class="mb-4">
+      <label for="nameCus">Tên khách hàng</label>
+      <div>
+        <select id="nameCus" >
+          <option value="${''}"></option>
+        </select>
+      </div>
+    </div>
+    <div class="mb-4 ">
+      <label for="dateStart">Ngày bắt đầu</label>
+      <div>
+        <input type="date" id="dateStart" class="form-control"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="mb-4 ">
+      <label for="dateEnd">Ngày kết thúc</label>
+      <div>
+        <input type="date" id="dateEnd" class="form-control"
+        />
+      </div>
+    </div>
+    <div class="mb-4 ">
+      <label for="deposit">Tiền đặt cọc</label>
+      <div>
+        <input type="text" id="deposit" class="form-control" placeholder="Nhập tiền đặt cọc.."
+        />
+      </div>
+    </div>
+    <div class="mb-4 ">
+      <label for="employee">Tên nhân viên</label>
+      <div>
+        <select id="employee" >
+          <option value="${''}"></option>
+
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="mb-4 text-center">
+    <button id="save"
+            class="btn btn-info btn-outline-success btn-sm border border-2 border-success text-dark">
+      Save <i class="fa-solid fa-floppy-disk"></i>
+    </button>
+  </div>
+</form>

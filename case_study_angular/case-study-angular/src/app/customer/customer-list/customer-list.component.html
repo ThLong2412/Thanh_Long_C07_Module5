@@ -1,0 +1,35 @@
+<table class="table">
+  <thead>
+  <tr class="table-dark">
+    <th>STT</th>
+    <th>Name</th>
+    <th>Customer Type</th>
+    <th>Date Of Birth</th>
+    <th>Gender</th>
+    <th>Id Card</th>
+    <th>Phone Number</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th colspan="2">Action</th>
+  </tr>
+  </thead>
+  <tbody class="table-hover">
+  <tr *ngFor="let item of customers; index as i">
+    <td>{{i+1}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.customerTypeId?.name}}</td>
+    <td>{{item.dateOfBirth}}</td>
+    <td>
+      <span *ngIf="item.gender == true; else f">Nam</span>
+      <ng-template #f>Nữ</ng-template>
+    </td>
+    <td>{{item.idCard}}</td>
+    <td>{{item.phoneNumber}}</td>
+    <td>{{item.email}}</td>
+    <td>{{item.address}}</td>
+    <td><button class="btn btn-outline-warning"><a href="#" class="card-link">Update</a></button></td>
+    <td><button class="btn btn-outline-danger"><a href="#" class="card-link">Delete</a></button></td>
+  </tr>
+  </tbody>
+</table>
+
