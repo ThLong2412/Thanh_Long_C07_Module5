@@ -73,6 +73,36 @@ export class ListComponent implements OnInit {
       facilityFree: '',
       flagDelete: false
     },
+    {
+      id: 3,
+      name: 'Room Twin 2',
+      area: 14000,
+      cost: 5000000,
+      maxPeople: 7,
+      facilityType: this.room,
+      rentType: this.date,
+      standardRoom: 'vip',
+      descriptionOtherConvenience: '',
+      poolArea: 0,
+      numberOfFloors: 3,
+      facilityFree: '',
+      flagDelete: false
+    },
+    {
+      id: 4,
+      name: 'House Princess 01',
+      area: 14000,
+      cost: 5000000,
+      maxPeople: 7,
+      facilityType: this.house,
+      rentType: this.year,
+      standardRoom: 'vip',
+      descriptionOtherConvenience: 'Có thêm bếp nướng',
+      poolArea: 0,
+      numberOfFloors: 3,
+      facilityFree: '',
+      flagDelete: false
+    },
   ];
 
   constructor() { }
