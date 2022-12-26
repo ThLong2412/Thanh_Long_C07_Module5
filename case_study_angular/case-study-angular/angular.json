@@ -25,14 +25,15 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "case_study_angular/case-study-angular/node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/assets"
             ],
             "styles": [
               "src/styles.css",
-              "case_study_angular/case-study-angular/node_modules/bootstrap/dist/js/bootstrap.js"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {

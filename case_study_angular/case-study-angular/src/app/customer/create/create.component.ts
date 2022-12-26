@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-create',
+  selector: 'app-create-customer',
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.css']
 })
