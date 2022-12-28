@@ -1,0 +1,43 @@
+<form [formGroup]="formLogin" (ngSubmit)="submit()">
+  <table>
+    <tr>
+      <th>
+        Email
+      </th>
+      <td>
+        <label>
+          <input type="text" formControlName="email" >
+        </label>
+        <div *ngIf="!email.valid && (email.dirty ||email.touched)" class="alert alert-danger">
+          <div [hidden]="!email.errors.required">
+            Bắt buộc phải có email
+          </div>
+          <div [hidden]="!email.errors.pattern">
+            Email chưa đúng địng dạng.
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        Password
+      </th>
+      <td>
+        <label>
+          <input type="password" formControlName="password">
+        </label>
+        <div *ngIf="!password.valid && (password.dirty ||password.touched)" class="alert alert-danger">
+          <div [hidden]="!password.errors.required">
+            Bắt buộc phải có password
+          </div>
+          <div [hidden]="!password.errors.minlength">
+            Password phải tối đa 6 ký tự.
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <div style="margin-left: 110px">
+    <button type="submit" [disabled]="!formLogin.valid">Submit</button>
+  </div>
+</form>
