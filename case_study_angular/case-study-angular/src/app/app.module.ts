@@ -13,6 +13,7 @@ import { CustomerEditComponent } from './customer/customer-edit/customer-edit.co
 import { FacilityListComponent } from './facility/facility-list/facility-list.component';
 import { FacilityCreateComponent } from './facility/facility-create/facility-create.component';
 import { FacilityEditComponent } from './facility/facility-edit/facility-edit.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -29,10 +30,11 @@ import { FacilityEditComponent } from './facility/facility-edit/facility-edit.co
     FacilityCreateComponent,
     FacilityEditComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

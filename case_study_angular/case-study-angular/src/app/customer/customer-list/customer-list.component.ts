@@ -8,6 +8,9 @@ import {Customer} from '../../model/customer/customer';
   styleUrls: ['./customer-list.component.css']
 })
 export class CustomerListComponent implements OnInit {
+
+
+  constructor() { }
   diamond: CustomerType = {
     id: 1,
     name: 'Diamond'
@@ -33,6 +36,7 @@ export class CustomerListComponent implements OnInit {
     {
       id: 1,
       customerTypeId: this.member,
+      code: 'KH-0090',
       name: 'Nguyễn Thị Hào',
       dateOfBirth: '1970-11-07',
       idCard: '643431213',
@@ -45,6 +49,7 @@ export class CustomerListComponent implements OnInit {
     {
       id: 2,
       customerTypeId: this.gold,
+      code: 'KH-0091',
       name: 'Phạm Xuân Diệu',
       dateOfBirth: '1992-08-08',
       idCard: '865342123',
@@ -57,6 +62,7 @@ export class CustomerListComponent implements OnInit {
     {
       id: 3,
       customerTypeId: this.diamond,
+      code: 'KH-0092',
       name: 'Trương Định Nghệ',
       dateOfBirth: '1990-02-27',
       idCard: '488645199',
@@ -68,10 +74,22 @@ export class CustomerListComponent implements OnInit {
     },
   ];
 
-
-  constructor() { }
+  display = 'none';
 
   ngOnInit(): void {
   }
 
+  // tslint:disable-next-line:typedef
+  save(event: any) {
+    this.customers.push(event);
+  }
+  // tslint:disable-next-line:typedef
+  delete() {
+    this.display = 'block';
+  }
+
+  // tslint:disable-next-line:typedef
+  close() {
+    this.display = 'none';
+  }
 }
