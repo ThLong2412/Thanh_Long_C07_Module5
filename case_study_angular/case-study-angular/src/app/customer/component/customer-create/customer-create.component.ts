@@ -1,8 +1,8 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Customer} from '../../model/customer/customer';
+import {Customer} from '../../model/customer';
 
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {CustomerType} from '../../model/customer/customer-type';
+import {CustomerType} from '../../model/customer-type';
 // @ts-ignore
 
 

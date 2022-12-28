@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Customer} from '../../model/customer/customer';
-import {Facility} from '../../model/facility/facility';
-import {Employee} from '../../model/employee/employee';
-import {Contract} from '../../model/contract/contract';
+import {Customer} from '../../../customer/model/customer';
+import {Facility} from '../../../facility/model/facility';
+import {Employee} from '../../../employee/model/employee';
+import {Contract} from '../../model/contract';
 
 @Component({
   selector: 'app-contract-list',
@@ -53,7 +53,7 @@ export class ContractListComponent implements OnInit {
     //   endDate: '2020-12-08',
     //   deposit: 0,
     //   customer: this['1'],
-    //   employee: this.hoThiYen,
+    //   model: this.hoThiYen,
     //   facility: this.roomTwin01
     // },
     {
