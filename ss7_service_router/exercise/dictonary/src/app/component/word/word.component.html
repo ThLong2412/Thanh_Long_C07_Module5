@@ -1,0 +1,17 @@
+<h1>Danh sách từ điển</h1>
+<div *ngIf="words.length != 0" >
+  <table>
+    <thead>
+    <tr>
+      <th>Từ</th>
+      <th>Dịch</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of words">
+      <td>{{item.word}}</td>
+      <td><button type="button" (click)="translate(item.id)">Dịch</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
