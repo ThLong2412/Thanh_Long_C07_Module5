@@ -1,11 +1,11 @@
 <h1>Cập nhật thông tin sản phẩm</h1>
-<button><a routerLink="/">Quay lại trang danh sách</a></button>
-<form [formGroup]="productUpdateForm" (ngSubmit)="updateProduct(product.id)">
+<button><a routerLink="/product/list">Quay lại trang danh sách</a></button>
+<form [formGroup]="productUpdateForm" (ngSubmit)="updateProduct(id)">
   <table>
-    <tr>
+    <tr hidden>
       <td>Mã sản phẩm:</td>
       <td><label>
-        <input type="number" formControlName="id">
+        <input type="number" formControlName="id" >
       </label></td>
     </tr>
     <tr>
@@ -27,8 +27,14 @@
       </label></td>
     </tr>
     <tr>
+    <td>Danh mục</td>
+    <select formControlName="category" [compareWith]="compareCate">
+      <option *ngFor="let cate of categories" [ngValue]="cate">{{cate.name}}</option>
+    </select>
+    </tr>
+    <tr>
       <td></td>
-      <td><button>Cập nhật</button></td>
+      <td><button type="submit">Cập nhật</button></td>
     </tr>
   </table>
 </form>

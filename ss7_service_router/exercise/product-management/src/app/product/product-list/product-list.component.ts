@@ -9,12 +9,10 @@ import {Router} from '@angular/router';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
+  products: Product[] = [];
   temp: Product = {};
 
-  products: Product[] = [];
-
-  constructor(private productService: ProductService,
-              private router: Router) {
+  constructor(private productService: ProductService) {
   }
 
   ngOnInit(): void {
@@ -22,8 +20,10 @@ export class ProductListComponent implements OnInit {
   }
 
   // tslint:disable-next-line:typedef
-  getAll() {
-    this.products = this.productService.getAll();
+  private getAll() {
+    this.productService.getAll().subscribe(products => {
+      this.products = products;
+      console.log(this.products);
+    });
   }
-
 }

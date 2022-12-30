@@ -1,8 +1,9 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {Product} from '../../model/product';
 import {ProductService} from '../../service/product.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
+import {CategoryService} from '../../service/category.service';
 
 @Component({
   selector: 'app-product-delete',
@@ -14,44 +15,38 @@ export class ProductDeleteComponent implements OnInit {
   @Input('product')
   product: Product = {};
   productDeleteForm = new FormGroup({}) ;
+  id: number;
 
   constructor(private productService: ProductService,
-              private activatedRoute: ActivatedRoute,
-              private router: Router) {
-    this.activatedRoute.paramMap.subscribe(data => {
-      const id = data.get('id');
-      if (id != null) {
-        this.product = this.getProduct(id);
-        this.productDeleteForm = new FormGroup({
-          id: new FormControl(this.product.id),
-          name: new FormControl(this.product.name),
-          price: new FormControl(this.product.price),
-          description: new FormControl(this.product.description),
-        });
-      }
+              private router: Router,
+              private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
+      // @ts-ignore
+      this.id = +paramMap.get('id');
+      this.getProduct(this.id);
     });
   }
+
+  // tslint:disable-next-line:typedef
+  ngOnInit() {
+  }
+
   // tslint:disable-next-line:typedef
   getProduct(id: number) {
-    return this.productService.findById(id);
+    return this.productService.findById(id).subscribe(product => {
+      this.productDeleteForm = new FormGroup({
+        name: new FormControl(product.name),
+      });
+    });
   }
 
-  ngOnInit(): void {
-
-  }
-  // cái này em dùng ở trường hợp khác nên em đóng lại ạ
   // tslint:disable-next-line:typedef
-  // deleteProduct(id: number) {
-  //   this.productService.deleteProduct(id);
-  //   // document.getElementById('exampleModal')?.click();
-  //   // this.router.navigate(['']);
-  // }
-
-  // tslint:disable-next-line:typedef
-  deleteProductById() {
-    // @ts-ignore
-    this.productService.deleteById(this.product.id);
-    this.router.navigate(['']);
+  deleteProduct(id: number) {
+    this.productService.deleteProduct(id).subscribe(() => {
+      this.router.navigate(['/product/list']);
+    }, e => {
+      console.log(e);
+    });
   }
 
 }

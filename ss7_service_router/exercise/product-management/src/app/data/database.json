@@ -1,0 +1,58 @@
+{
+  "product": [
+    {
+      "id": 3,
+      "name": "adsa",
+      "price": 3212,
+      "description": "sda",
+      "category": {
+        "id": 3,
+        "name": "Oppo2"
+      }
+    },
+    {
+      "id": 4,
+      "name": "ẻ",
+      "price": 32,
+      "description": "df",
+      "category": {
+        "id": 3,
+        "name": "Oppo2"
+      }
+    },
+    {
+      "id": 5,
+      "name": "dfs",
+      "price": 1232,
+      "description": "3ds",
+      "category": {
+        "id": 2,
+        "name": "Vivo"
+      }
+    },
+    {
+      "id": 6,
+      "name": "fd",
+      "price": 321132,
+      "description": "dfs",
+      "category": {
+        "id": 1,
+        "name": "Iphone"
+      }
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "Iphone"
+    },
+    {
+      "id": 2,
+      "name": "Vivo"
+    },
+    {
+      "id": 3,
+      "name": "Oppo2"
+    }
+  ]
+}
