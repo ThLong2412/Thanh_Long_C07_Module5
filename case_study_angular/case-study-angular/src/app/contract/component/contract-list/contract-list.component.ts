@@ -52,7 +52,7 @@ export class ContractListComponent implements OnInit {
     //   startDate: '2020-12-08',
     //   endDate: '2020-12-08',
     //   deposit: 0,
-    //   customer: this['1'],
+    //   routing: this['1'],
     //   model: this.hoThiYen,
     //   facility: this.roomTwin01
     // },

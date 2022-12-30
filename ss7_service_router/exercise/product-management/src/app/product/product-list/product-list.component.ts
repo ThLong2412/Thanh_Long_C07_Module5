@@ -20,7 +20,7 @@ export class ProductListComponent implements OnInit {
   }
 
   // tslint:disable-next-line:typedef
-  private getAll() {
+   getAll() {
     this.productService.getAll().subscribe(products => {
       this.products = products;
       console.log(this.products);
