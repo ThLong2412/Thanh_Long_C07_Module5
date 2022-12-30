@@ -14,6 +14,7 @@ import { FacilityListComponent } from './facility/component/facility-list/facili
 import { FacilityCreateComponent } from './facility/component/facility-create/facility-create.component';
 import { FacilityEditComponent } from './facility/component/facility-edit/facility-edit.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { CustomerDeleteComponent } from './customer/component/customer-delete/customer-delete.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     CustomerEditComponent,
     FacilityListComponent,
     FacilityCreateComponent,
-    FacilityEditComponent
+    FacilityEditComponent,
+    CustomerDeleteComponent
   ],
     imports: [
         BrowserModule,

@@ -8,7 +8,7 @@ import {Customer} from '../../model/customer';
   styleUrls: ['./customer-list.component.css']
 })
 export class CustomerListComponent implements OnInit {
-
+  temp: Customer = {};
 
   constructor() { }
   diamond: CustomerType = {

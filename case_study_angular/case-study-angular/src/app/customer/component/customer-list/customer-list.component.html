@@ -30,27 +30,11 @@
     <td>{{item.email}}</td>
     <td>{{item.address}}</td>
     <td><button class="btn btn-outline-warning">Update</button></td>
-    <td><button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</button></td>
+    <td><button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="temp = item" >Delete</button></td>
   </tr>
   </tbody>
 </table>
+<app-customer-delete [customer]="temp"></app-customer-delete>
 <app-customer-create (eventCreate)="save($event)"></app-customer-create>
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="close()">Close</button>
-        <button type="button" class="btn btn-primary" (click)="delete()">Delete</button>
-      </div>
-    </div>
-  </div>
-</div>
+
 
