@@ -35,6 +35,7 @@ export class ProductDeleteComponent implements OnInit {
   getProduct(id: number) {
     return this.productService.findById(id).subscribe(product => {
       this.productDeleteForm = new FormGroup({
+        id: new FormControl(this.id),
         name: new FormControl(product.name),
       });
     });
@@ -42,6 +43,7 @@ export class ProductDeleteComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   deleteProduct(id: number) {
+    id = this.id;
     this.productService.deleteProduct(id).subscribe(() => {
       this.router.navigate(['/product/list']);
     }, e => {

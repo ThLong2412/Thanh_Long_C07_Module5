@@ -7,6 +7,8 @@ import {ProductCreateComponent} from './product-create/product-create.component'
 import {ProductEditComponent} from './product-edit/product-edit.component';
 import {ProductDeleteComponent} from './product-delete/product-delete.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -14,7 +16,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     ProductListComponent,
     ProductCreateComponent,
     ProductEditComponent,
-    ProductDeleteComponent
+    ProductDeleteComponent,
   ],
   imports: [
     CommonModule,

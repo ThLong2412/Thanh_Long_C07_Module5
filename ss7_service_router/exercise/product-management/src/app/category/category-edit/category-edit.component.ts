@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {CategoryService} from '../../service/category.service';
 import {ActivatedRoute, ParamMap} from '@angular/router';
-import {Category} from '../../model/category';
 
 @Component({
   selector: 'app-category-edit',
@@ -11,7 +10,7 @@ import {Category} from '../../model/category';
 })
 export class CategoryEditComponent implements OnInit {
   categoryForm: FormGroup = new FormGroup({});
-  id: number | undefined;
+  id: number;
 
   constructor(private categoryService: CategoryService,
               private activatedRoute: ActivatedRoute) {

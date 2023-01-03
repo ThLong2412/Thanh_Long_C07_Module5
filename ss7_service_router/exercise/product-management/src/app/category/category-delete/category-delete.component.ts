@@ -11,7 +11,7 @@ import {Category} from '../../model/category';
 })
 export class CategoryDeleteComponent implements OnInit {
   categoryForm: FormGroup = new FormGroup({});
-  id: number | undefined;
+  id: number;
 
   constructor(private categoryService: CategoryService,
               private router: Router,
