@@ -1,0 +1,110 @@
+{
+  "san-pham": [
+    {
+      "id": 1,
+      "ten": "Bia",
+      "xuatXu": "Việt Nam",
+      "giaTien": 12000,
+      "donVi": "Thùng"
+    },
+    {
+      "id": 2,
+      "ten": "Nước ngọt",
+      "xuatXu": "Việt Nam",
+      "giaTien": 1000,
+      "donVi": "Thùng"
+    }
+  ],
+  "lo-hang": [
+    {
+      "id": "2",
+      "maLoHang": "LH-0983",
+      "sanPham": {
+        "id": 1,
+        "ten": "Bia",
+        "xuatXu": "Việt Nam",
+        "giaTien": 12000,
+        "donVi": "Thùng"
+      },
+      "soLuong": "3",
+      "ngayNhapHang": "2023-01-02",
+      "ngaySanXuat": "2023-01-03",
+      "ngayHetHan": "2023-01-03"
+    },
+    {
+      "id": "3",
+      "maLoHang": "LH-2201",
+      "sanPham": {
+        "id": 2,
+        "ten": "Nước ngọt",
+        "xuatXu": "Việt Nam",
+        "giaTien": 1000,
+        "donVi": "Thùng"
+      },
+      "soLuong": "4",
+      "ngayNhapHang": "2023-01-09",
+      "ngaySanXuat": "2023-01-02",
+      "ngayHetHan": "2023-01-02"
+    },
+    {
+      "id": "1",
+      "maLoHang": "LH-3324",
+      "sanPham": {
+        "id": 2,
+        "ten": "Nước ngọt",
+        "xuatXu": "Việt Nam",
+        "giaTien": 1000,
+        "donVi": "Thùng"
+      },
+      "soLuong": "4",
+      "ngayNhapHang": "2023-01-02",
+      "ngaySanXuat": "2023-01-11",
+      "ngayHetHan": "2023-01-09"
+    },
+    {
+      "id": "5",
+      "maLoHang": "LH-3642",
+      "sanPham": {
+        "id": 2,
+        "ten": "Nước ngọt",
+        "xuatXu": "Việt Nam",
+        "giaTien": 1000,
+        "donVi": "Thùng"
+      },
+      "soLuong": "2",
+      "ngayNhapHang": "2023-01-03",
+      "ngaySanXuat": "2023-01-04",
+      "ngayHetHan": "2023-01-10"
+    },
+    {
+      "id": "6",
+      "maLoHang": "LH-8743",
+      "sanPham": {
+        "id": 2,
+        "ten": "Nước ngọt",
+        "xuatXu": "Việt Nam",
+        "giaTien": 1000,
+        "donVi": "Thùng"
+      },
+      "soLuong": "4",
+      "ngayNhapHang": "2023-01-02",
+      "ngaySanXuat": "2023-01-03",
+      "ngayHetHan": "2023-01-17"
+    },
+    {
+      "id": "7",
+      "maLoHang": "LH-3263",
+      "sanPham": {
+        "id": 2,
+        "ten": "Nước ngọt",
+        "xuatXu": "Việt Nam",
+        "giaTien": 1000,
+        "donVi": "Thùng"
+      },
+      "soLuong": "4",
+      "ngayNhapHang": "2023-01-03",
+      "ngaySanXuat": "2023-01-09",
+      "ngayHetHan": "2023-01-24"
+    }
+  ]
+}

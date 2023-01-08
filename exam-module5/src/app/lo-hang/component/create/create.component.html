@@ -1,0 +1,62 @@
+<form [formGroup]="formCreate" (ngSubmit)="create()" novalidate style="width: 500px; margin-left: 500px">
+  <div class="row">
+    <div class="form-outline" style="text-align: center">
+      <label class="form-label">ID</label>
+      <label for="id"></label><input id="id" type="text"
+                                     class="form-control form-control-lg" formControlName="id"/>
+      <span style="color: red;"
+            *ngIf="formCreate.controls.id.hasError('required')">Id không được trống</span>
+    </div>
+    <div class="col-lg-6">
+      <div class="form-outline mb-4">
+        <label class="form-label">Mã lô hàng</label>
+        <input type="text" class="form-control form-control-lg" formControlName="maLoHang"/>
+        <span style="color: red;"
+              *ngIf="formCreate.controls.maLoHang.hasError('required')">Mã lô hàng không được trống</span>
+        <span style="color: red;"
+              *ngIf="formCreate.controls.maLoHang.hasError('pattern')">Mã lô hàng chưa đúng địng dạng</span>
+      </div>
+      <div class="form-outline mb-4">
+        <label class="form-label">Sản phẩm</label>
+        <select  class="form-select" formControlName="sanPham" style="height: 50px">
+          <option *ngFor="let item of sanPhams" [ngValue]="item">{{item.ten}}</option>
+        </select>
+      </div>
+      <div class="form-outline mb-4">
+        <label class="form-label">Số lượng</label>
+        <input type="text" class="form-control form-control-lg" formControlName="soLuong"/>
+        <span style="color: red;"
+              *ngIf="formCreate.controls.soLuong.hasError('required')">Số lượng không được trống</span>
+        <span style="color: red;"
+              *ngIf="formCreate.controls.soLuong.hasError('min')">Số lượng phải nguyên dương</span>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="form-outline mb-4">
+        <label class="form-label">Ngày nhập hàng</label>
+        <input type="date" class="form-control form-control-lg" formControlName="ngayNhapHang"/>
+        <span style="color: red;"
+              *ngIf="formCreate.controls.ngayNhapHang.hasError('required')">Ngày nhập hàng phải có</span>
+      </div>
+      <div class="form-outline mb-4">
+        <label class="form-label">Ngày sản xuất</label>
+        <input type="date" class="form-control form-control-lg" formControlName="ngaySanXuat"/>
+        <span style="color: red;"
+              *ngIf="formCreate.controls.ngaySanXuat.hasError('required')">Ngày sản xuất không được trống</span>
+      </div>
+      <div class="form-outline mb-4">
+        <label class="form-label">Ngày hết hạn</label>
+        <input type="date" class="form-control form-control-lg" formControlName="ngayHetHan"/>
+        <span style="color: red;"
+              *ngIf="formCreate.controls.ngayHetHan.hasError('required')">Ngày hết hạn không được trống</span>
+      </div>
+    </div>
+
+  </div>
+  <div class="row" style="text-align: center">
+    <div>
+      <button type="button" class="btn btn-secondary" routerLink="/">Quay lại</button>
+      <button type="submit" class="btn btn-primary" [disabled]="!formCreate.valid">Nhập hàng</button>
+    </div>
+  </div>
+</form>

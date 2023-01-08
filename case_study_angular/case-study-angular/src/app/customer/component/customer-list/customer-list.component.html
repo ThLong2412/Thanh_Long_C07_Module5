@@ -1,3 +1,12 @@
+<form class="d-flex" [formGroup]="searchForm" (ngSubmit)="onSearch()">
+  <input class="form-control" style="height: 50px; width: 400px; margin-left: 30px" type="search" formControlName="name" placeholder="Tìm kiếm them tên" aria-label="Search">
+  <select class="form-control"  style="height: 50px; width: 400px; margin-left: 10px" formControlName="customerTypeId" >
+  <option [ngValue]="null" selected>Loại khách</option>
+    <option *ngFor="let item of customerTypes" [ngValue]="item.name">{{item.name}}</option>
+  </select>
+  <button class="btn btn-outline-success" type="submit" style="margin-left: 20px">Tìm kiếm</button>
+  <button class="btn btn-outline-primary" data-bs-toggle="modal" style="margin-left: 450px" data-bs-target="#modalAdd" routerLink="/customer/create" type="button">Thêm mới</button>
+</form>
 <table class="table">
   <thead>
   <tr class="table-dark">
@@ -15,7 +24,7 @@
   </tr>
   </thead>
   <tbody class="table-hover">
-  <tr *ngFor="let item of customers; index as i">
+  <tr *ngFor="let item of customers | paginate: { itemsPerPage: 2, currentPage: page }; index as i" >
     <td>{{i+1}}</td>
     <td>{{item.name}}</td>
     <td>{{item.code}}</td>
@@ -29,11 +38,12 @@
     <td>{{item.phoneNumber}}</td>
     <td>{{item.email}}</td>
     <td>{{item.address}}</td>
-    <td><button class="btn btn-outline-warning">Update</button></td>
+    <td><button class="btn btn-outline-warning"><a [routerLink]="['/customer/edit',item.id]">Edit</a></button></td>
     <td><button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="temp = item" >Delete</button></td>
   </tr>
   </tbody>
 </table>
-<app-customer-delete [customer]="temp"></app-customer-delete>
+<pagination-controls (pageChange)="page = $event"></pagination-controls>
+<app-customer-delete [customer]="temp" (eventDelete)="reload()"></app-customer-delete>
 
 

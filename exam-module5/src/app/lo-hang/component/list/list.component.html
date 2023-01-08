@@ -1,0 +1,45 @@
+<form class="d-flex" [formGroup]="formSearch" (ngSubmit)="onSearch()" style="margin-top: 10px">
+  <input class="form-control" style="height: 50px; width: 200px; margin-left: 30px" type="date" formControlName="ngayHetHan" placeholder="Tìm kiếm ngày hết hạn" aria-label="Search">
+  <label>
+    <select class="form-select"  style="height: 50px; width: 250px; margin-left: 10px" formControlName="tenSanPham" >
+      <option [ngValue]="null" selected>Tìm kiếm theo tên sản phẩm</option>
+      <option *ngFor="let item of sanPhams" [ngValue]="item.ten">{{item.ten}}</option>
+    </select>
+  </label>
+  <button class="btn btn-outline-success" type="submit" style="margin-left: 20px">Tìm kiếm</button>
+</form>
+<button style="margin-left: 700px; margin-top: 10px; margin-bottom: 10px" type="button" class="btn btn-secondary" routerLink="/create">Nhập hàng</button>
+<table class="table">
+  <thead>
+  <tr class="table-dark">
+    <th>STT</th>
+    <th>Mã lô hàng</th>
+    <th>Tên sản phẩm</th>
+    <th>Giá tiền</th>
+    <th>Đơn vị</th>
+    <th>Số lượng</th>
+    <th>Ngày nhập hàng</th>
+    <th>Ngày sản xuất</th>
+    <th>Ngày hết hạng</th>
+    <th colspan="2">Action</th>
+  </tr>
+  </thead>
+  <tbody class="table-hover">
+  <tr *ngFor="let item of loHangs; index as i" >
+    <td>{{i+1}}</td>
+    <td>{{item.maLoHang}}</td>
+    <td>{{item.sanPham?.ten}}</td>
+    <td>{{item.sanPham?.giaTien}}</td>
+    <td>{{item.sanPham?.donVi}}</td>
+    <td>{{item.soLuong}}</td>
+    <td>{{item.ngayNhapHang}}</td>
+    <td>{{item.ngaySanXuat}}</td>
+    <td>{{item.ngayHetHan}}</td>
+    <td><button class="btn btn-outline-warning"><a>Cập nhật</a></button></td>
+    <td><button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="temp = item" >Xóa</button></td>
+  </tr>
+  </tbody>
+</table>
+<button class="btn btn-priamry" (click)="previous()">Previous</button>
+<button class="btn btn-priamry" (click)="next()">Next</button>
+<app-delete [loHang]="temp" (eventDelete)="reload()"></app-delete>

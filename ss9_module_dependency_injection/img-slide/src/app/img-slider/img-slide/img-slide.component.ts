@@ -18,7 +18,7 @@ export class ImgSlideComponent implements OnInit {
       id: 4,
       link: 'https://i.pinimg.com/originals/12/84/08/1284085ae102c18701c35d329d44f820.jpg'
     }];
-  size: number = this.img?.length;
+  size = this.img?.length;
 
   constructor() {
   }
@@ -27,8 +27,10 @@ export class ImgSlideComponent implements OnInit {
   }
 
   previous(): void {
-    if (this.n < this.size - 1) {
-      this.n = this.n + 1;
+    if (this.size != null) {
+      if (this.n < this.size - 1) {
+        this.n = this.n + 1;
+      }
     }
   }
 

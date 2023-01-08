@@ -1,6 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {FormGroup} from '@angular/forms';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Customer} from '../../model/customer';
+import {CustomerServiceService} from '../../service/customer-service.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-customer-delete',
@@ -8,20 +9,23 @@ import {Customer} from '../../model/customer';
   styleUrls: ['./customer-delete.component.css']
 })
 export class CustomerDeleteComponent implements OnInit {
-  formDelete: FormGroup = new FormGroup({});
-  // tslint:disable-next-line:no-input-rename
   @Input('customer')
   customer: Customer = {};
-  // id: number;
+  @Output()
+  eventDelete = new EventEmitter();
 
-  constructor() {
+  constructor(private customerServiceService: CustomerServiceService, private router: Router) {
   }
 
-  // tslint:disable-next-line:typedef
   ngOnInit() {
   }
 
-  // tslint:disable-next-line:typedef
-  delete(id: number) {
+  delete() {
+    this.customerServiceService.deleteCustomer(this.customer.id).subscribe(() => {
+      this.router.navigate(['/customer/list']);
+      this.eventDelete.emit();
+    }, e => {
+      console.log(e);
+    });
   }
 }

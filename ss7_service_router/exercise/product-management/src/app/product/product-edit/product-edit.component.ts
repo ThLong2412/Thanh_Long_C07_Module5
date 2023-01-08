@@ -46,7 +46,7 @@ export class ProductEditComponent implements OnInit {
   }
 
   // tslint:disable-next-line:typedef
-  getProduct(id: number ) {
+  getProduct(id: number) {
     return this.productService.findById(id).subscribe(category => {
       this.productUpdateForm = new FormGroup({
         id: new FormControl(category.id),

@@ -1,4 +1,4 @@
-<form [formGroup]="formDelete">
+
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -11,9 +11,9 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Xóa</button>
+          <button type="submit" class="btn btn-danger" (click)="delete()" data-bs-dismiss="modal">Xóa</button>
         </div>
       </div>
     </div>
   </div>
-</form>
+

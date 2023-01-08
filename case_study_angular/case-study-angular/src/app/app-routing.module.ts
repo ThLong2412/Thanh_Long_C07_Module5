@@ -5,7 +5,6 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: 'customer',
-    // @ts-ignore
     loadChildren: () => import('./customer/routing/customer.module').then(module => module.CustomerModule)
   }
 ];

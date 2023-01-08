@@ -10,11 +10,21 @@ export class CustomerServiceService {
   URL_PRODUCT = 'http://localhost:3000/customer';
   constructor(private  httpClient: HttpClient) { }
 
-  getAll(): Observable<Customer[]> {
-    return this.httpClient.get<Customer[]>(this.URL_PRODUCT );
+  getAll(value: string, customerType: any): Observable<Customer[]> {
+    if (value == null && customerType != null) {
+      return this.httpClient.get<Customer[]>(`${(this.URL_PRODUCT)}?customerTypeId.name_like=${customerType}`);
+    }
+    if (customerType == null && value != null) {
+      return this.httpClient.get<Customer[]>(`${(this.URL_PRODUCT)}?name_like=${value}`);
+    }
+    if (value != null && customerType != null) {
+      return this.httpClient.get<Customer[]>(`${(this.URL_PRODUCT)}?name_like=${value}&customerTypeId.name_like=${customerType}`);
+    } else {
+      return this.httpClient.get<Customer[]>(this.URL_PRODUCT);
+    }
   }
 
-  saveProduct(customer: Customer): Observable<Customer> {
+  saveCustomer(customer: Customer): Observable<Customer> {
     return this.httpClient.post<Customer>(this.URL_PRODUCT, customer);
   }
 
@@ -22,11 +32,14 @@ export class CustomerServiceService {
     return this.httpClient.get<Customer>(`${(this.URL_PRODUCT)}/${id}`);
   }
 
-  updateProduct(id: number , customer: Customer): Observable<Customer> {
-    return this.httpClient.patch<Customer>(`${(this.URL_PRODUCT)}/${id}`, customer);
+  updateCustomer(customer: Customer): Observable<Customer> {
+    return this.httpClient.patch<Customer>(`${(this.URL_PRODUCT)}/${customer.id}`, customer);
   }
 
-  deleteProduct(id: number ): Observable<Customer> {
+  deleteCustomer(id: number | undefined): Observable<Customer> {
+    if (id == null){
+      alert('không timg thấy id');
+    }
     return this.httpClient.delete<Customer>(`${this.URL_PRODUCT}/${id}`);
   }
 }
