@@ -1,0 +1,73 @@
+<div class="modal fade" id="modalUpdate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Xóa sản phẩm</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formEdit" (ngSubmit)="update()" novalidate style="width: 500px; margin-left: 500px">
+          <div class="row">
+            <div class="form-outline" style="text-align: center">
+              <label class="form-label">ID</label>
+              <label for="id"></label><input id="id" type="text"
+                                             class="form-control form-control-lg" formControlName="id"/>
+              <span style="color: red;"
+                    *ngIf="formEdit.controls.id.hasError('required')">Id không được trống</span>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-outline mb-4">
+                <label class="form-label">Mã lô hàng</label>
+                <input type="text" class="form-control form-control-lg" formControlName="maLoHang"/>
+                <span style="color: red;"
+                      *ngIf="formEdit.controls.maLoHang.hasError('required')">Mã lô hàng không được trống</span>
+                <span style="color: red;"
+                      *ngIf="formEdit.controls.maLoHang.hasError('pattern')">Mã lô hàng chưa đúng địng dạng</span>
+              </div>
+              <div class="form-outline mb-4">
+                <label class="form-label">Sản phẩm</label>
+                <select class="form-select" formControlName="sanPham" style="height: 50px">
+                  <option *ngFor="let item of sanPhams" [ngValue]="item">{{item.ten}}</option>
+                </select>
+              </div>
+              <div class="form-outline mb-4">
+                <label class="form-label">Số lượng</label>
+                <input type="text" class="form-control form-control-lg" formControlName="soLuong"/>
+                <span style="color: red;"
+                      *ngIf="formEdit.controls.soLuong.hasError('required')">Số lượng không được trống</span>
+                <span style="color: red;"
+                      *ngIf="formEdit.controls.soLuong.hasError('min')">Số lượng phải nguyên dương</span>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-outline mb-4">
+                <label class="form-label">Ngày nhập hàng</label>
+                <input type="date" class="form-control form-control-lg" formControlName="ngayNhapHang"/>
+                <span style="color: red;"
+                      *ngIf="formEdit.controls.ngayNhapHang.hasError('required')">Ngày nhập hàng phải có</span>
+              </div>
+              <div class="form-outline mb-4">
+                <label class="form-label">Ngày sản xuất</label>
+                <input type="date" class="form-control form-control-lg" formControlName="ngaySanXuat"/>
+                <span style="color: red;"
+                      *ngIf="formEdit.controls.ngaySanXuat.hasError('required')">Ngày sản xuất không được trống</span>
+              </div>
+              <div class="form-outline mb-4">
+                <label class="form-label">Ngày hết hạn</label>
+                <input type="date" class="form-control form-control-lg" formControlName="ngayHetHan"/>
+                <span style="color: red;"
+                      *ngIf="formEdit.controls.ngayHetHan.hasError('required')">Ngày hết hạn không được trống</span>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Quay lại
+        </button>
+        <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Cập nhật</button>
+      </div>
+    </div>
+  </div>
+</div>
