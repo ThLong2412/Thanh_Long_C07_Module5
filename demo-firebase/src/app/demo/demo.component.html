@@ -1,0 +1,13 @@
+<div class="mt-lg-4 container">
+<div class="form-group">
+  <label for="avatar">Ảnh đại diện</label>
+  <div class="input-group">
+    <div class="custom-file">
+      <input type="file" class="custom-file-input" id="avatar" #fileUpLoader
+      (change)="showPreview($event)">
+      <label for="avatar" class="custom-file-label">chọn file</label>
+    </div>
+  </div>
+</div>
+  <img [src]="imgSrc" height="125" width="100" alt="Ảnh đại diện.." (click)="fileUpLoader.click()"/>
+</div>
